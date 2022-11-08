@@ -23,3 +23,10 @@
 .title {
   margin-left: 50px;
 }
+
+.list__text {
+  list-style: none;
+}
+.list__text__item {
+  margin: 2px;
+}
