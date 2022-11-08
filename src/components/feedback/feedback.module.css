@@ -1,0 +1,25 @@
+.container {
+  margin: 0 auto;
+}
+
+.list {
+  display: flex;
+  list-style: none;
+  gap: 10px;
+}
+.button {
+  cursor: pointer;
+  width: 100px;
+  height: 25px;
+  border-radius: 8px;
+}
+.button:hover,
+.button:focus {
+  background-color: red;
+  color: white;
+  outline: 2px solid wheat;
+}
+
+.title {
+  margin-left: 50px;
+}
