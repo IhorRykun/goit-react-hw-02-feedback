@@ -7,6 +7,7 @@ export class Feedback extends Component {
     netural: 0,
     bad: 0,
     total: 0,
+    positiveFeedback:0,
   };
 
   state = {
