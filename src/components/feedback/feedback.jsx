@@ -48,7 +48,7 @@ export class Feedback extends Component {
     return (
       <div className={css.container}>
         <h2 className={css.title}>Please leave feedback</h2>
-        <h3>Statistics</h3>
+        <h3 className={css.title__text}>Statistics</h3>
         <ul className={css.list}>
           <li>
             <button onClick={this.goodHendler} className={css.button}>
@@ -68,16 +68,26 @@ export class Feedback extends Component {
         </ul>
         <ul className={css.list__text}>
           <li className={css.list__text__item}>
-            <p>Good:{this.state.good}</p>
+            <p>
+              Good: <span className={css.span__text}>{this.state.good}</span>
+            </p>
           </li>
           <li className={css.list__text__item}>
-            <p>Neutral:{this.state.netural}</p>
+            <p>
+              Neutral:{' '}
+              <span className={css.span__text}>{this.state.netural}</span>
+            </p>
           </li>
           <li className={css.list__text__item}>
-            <p>Bad:{this.state.bad}</p>
+            <p>
+              Bad:<span className={css.span__text}>{this.state.bad}</span>
+            </p>
           </li>
           <li className={css.list__text__item}>
-            <p>Total:{this.state.total}</p>
+            <p>
+              Total:
+              <span className={css.span__text__red}>{this.state.total}</span>
+            </p>
           </li>
         </ul>
       </div>

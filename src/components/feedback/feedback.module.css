@@ -26,7 +26,8 @@
 }
 
 .title {
-  margin-left: 50px;
+  color: white;
+  text-align: center;
 }
 
 .list__text {
@@ -34,4 +35,19 @@
 }
 .list__text__item {
   margin: 2px;
+}
+.title__text {
+  color: white;
+  text-align: center;
+}
+.span__text {
+  margin-left: 5px;
+  color: white;
+}
+
+.span__text__red {
+  margin-left: 5px;
+}
+.list__text__item {
+  color: white;
 }
