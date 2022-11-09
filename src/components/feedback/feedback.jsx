@@ -14,6 +14,7 @@ export class Feedback extends Component {
     netural: this.props.netural,
     bad: this.props.bad,
     total: this.props.total,
+    positiveFeedback: this.props.positiveFeedback,
   };
 
   goodHendler = () => {
@@ -41,6 +42,15 @@ export class Feedback extends Component {
     this.setState(prevState => ({
       total: (prevState.total =
         prevState.netural + prevState.good + prevState.bad),
+    }));
+    this.positiveFeedback();
+  };
+
+  positiveFeedback = () => {
+    this.setState(prevState => ({
+      positiveFeedback: (prevState.positiveFeedback = Math.round(
+        (prevState.good / prevState.total) * 100
+      )),
     }));
   };
 
@@ -87,6 +97,14 @@ export class Feedback extends Component {
             <p>
               Total:
               <span className={css.span__text__red}>{this.state.total}</span>
+            </p>
+          </li>
+          <li className={css.list__text__item}>
+            <p>
+              Positive feedback:
+              <span className={css.span__text__red}>
+                {this.state.positiveFeedback}%
+              </span>
             </p>
           </li>
         </ul>
