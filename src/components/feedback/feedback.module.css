@@ -1,5 +1,10 @@
 .container {
   margin: 0 auto;
+  background-color: gray;
+  display: block;
+  width: 400px;
+  border-radius: 10px;
+  padding: 10px 0;
 }
 
 .list {

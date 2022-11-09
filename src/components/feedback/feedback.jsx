@@ -20,23 +20,27 @@ export class Feedback extends Component {
     this.setState(prevState => ({
       good: prevState.good + 1,
     }));
+    this.totalHendler();
   };
 
   neturalHendler = () => {
     this.setState(prevState => ({
       netural: prevState.netural + 1,
     }));
+    this.totalHendler();
   };
 
   badHendler = () => {
     this.setState(prevState => ({
       bad: prevState.bad + 1,
     }));
+    this.totalHendler();
   };
 
   totalHendler = () => {
     this.setState(prevState => ({
-      total: prevState.total,
+      total: (prevState.total =
+        prevState.netural + prevState.good + prevState.bad),
     }));
   };
 
