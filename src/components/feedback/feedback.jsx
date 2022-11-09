@@ -2,10 +2,18 @@ import css from '../feedback/feedback.module.css';
 import React, { Component } from 'react';
 
 export class Feedback extends Component {
-  state = {
+  static defaultProps = {
     good: 0,
     netural: 0,
     bad: 0,
+    total: 0,
+  };
+
+  state = {
+    good: this.props.good,
+    netural: this.props.netural,
+    bad: this.props.bad,
+    total: this.props.total,
   };
 
   goodHendler = () => {
@@ -23,6 +31,12 @@ export class Feedback extends Component {
   badHendler = () => {
     this.setState(prevState => ({
       bad: prevState.bad + 1,
+    }));
+  };
+
+  totalHendler = () => {
+    this.setState(prevState => ({
+      total: prevState.total,
     }));
   };
 
@@ -57,6 +71,9 @@ export class Feedback extends Component {
           </li>
           <li className={css.list__text__item}>
             <p>Bad:{this.state.bad}</p>
+          </li>
+          <li className={css.list__text__item}>
+            <p>Total:{this.state.total}</p>
           </li>
         </ul>
       </div>
