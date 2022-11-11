@@ -5,6 +5,7 @@
   width: 400px;
   border-radius: 10px;
   padding: 10px 0;
+  margin-top: 20px;
 }
 
 .list {
@@ -45,7 +46,7 @@
   color: white;
 }
 
-.span__text__red { 
+.span__text__red {
   margin-left: 5px;
 }
 .list__text__item {
