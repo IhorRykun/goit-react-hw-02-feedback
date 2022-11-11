@@ -1,5 +1,6 @@
 import css from '../feedback/feedback.module.css';
 import React, { Component } from 'react';
+import { ListButton } from './listButton';
 
 export class Feedback extends Component {
   static defaultProps = {
@@ -71,23 +72,11 @@ export class Feedback extends Component {
       <div className={css.container}>
         <h2 className={css.title}>Please leave feedback</h2>
         <h3 className={css.title__text}>Statistics</h3>
-        <ul className={css.list}>
-          <li>
-            <button onClick={this.goodHendler} className={css.button}>
-              Good
-            </button>
-          </li>
-          <li>
-            <button onClick={this.neturalHendler} className={css.button}>
-              Neutral
-            </button>
-          </li>
-          <li>
-            <button onClick={this.badHendler} className={css.button}>
-              Bad
-            </button>
-          </li>
-        </ul>
+        <ListButton
+          goodHendler={this.goodHendler}
+          neturalHendler={this.neturalHendler}
+          badHendler={this.badHendler}
+        />
         {this.state.visible ? (
           <ul className={css.list__text}>
             <li className={css.list__text__item}>
