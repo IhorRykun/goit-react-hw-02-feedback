@@ -7,7 +7,8 @@ export class Feedback extends Component {
     netural: 0,
     bad: 0,
     total: 0,
-    positiveFeedback:0,
+    positiveFeedback: 0,
+    visible: false,
   };
 
   state = {
@@ -16,6 +17,13 @@ export class Feedback extends Component {
     bad: this.props.bad,
     total: this.props.total,
     positiveFeedback: this.props.positiveFeedback,
+    visibl: this.visibl,
+  };
+
+  show = () => {
+    this.setState({
+      visible: true,
+    });
   };
 
   goodHendler = () => {
@@ -23,6 +31,7 @@ export class Feedback extends Component {
       good: prevState.good + 1,
     }));
     this.totalHendler();
+    this.show();
   };
 
   neturalHendler = () => {
@@ -30,6 +39,7 @@ export class Feedback extends Component {
       netural: prevState.netural + 1,
     }));
     this.totalHendler();
+    this.show();
   };
 
   badHendler = () => {
@@ -37,6 +47,7 @@ export class Feedback extends Component {
       bad: prevState.bad + 1,
     }));
     this.totalHendler();
+    this.show();
   };
 
   totalHendler = () => {
@@ -77,7 +88,7 @@ export class Feedback extends Component {
             </button>
           </li>
         </ul>
-        <ul className={css.list__text}>
+        {this.state.visible?<ul className={css.list__text}>
           <li className={css.list__text__item}>
             <p>
               Good: <span className={css.span__text}>{this.state.good}</span>
@@ -108,7 +119,7 @@ export class Feedback extends Component {
               </span>
             </p>
           </li>
-        </ul>
+        </ul>:""}
       </div>
     );
   }
