@@ -52,3 +52,8 @@
 .list__text__item {
   color: white;
 }
+
+.text__message {
+  color: white;
+  text-align: center;
+}

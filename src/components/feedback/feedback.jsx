@@ -88,38 +88,42 @@ export class Feedback extends Component {
             </button>
           </li>
         </ul>
-        {this.state.visible?<ul className={css.list__text}>
-          <li className={css.list__text__item}>
-            <p>
-              Good: <span className={css.span__text}>{this.state.good}</span>
-            </p>
-          </li>
-          <li className={css.list__text__item}>
-            <p>
-              Neutral:{' '}
-              <span className={css.span__text}>{this.state.netural}</span>
-            </p>
-          </li>
-          <li className={css.list__text__item}>
-            <p>
-              Bad:<span className={css.span__text}>{this.state.bad}</span>
-            </p>
-          </li>
-          <li className={css.list__text__item}>
-            <p>
-              Total:
-              <span className={css.span__text__red}>{this.state.total}</span>
-            </p>
-          </li>
-          <li className={css.list__text__item}>
-            <p>
-              Positive feedback:
-              <span className={css.span__text__red}>
-                {this.state.positiveFeedback}%
-              </span>
-            </p>
-          </li>
-        </ul>:""}
+        {this.state.visible ? (
+          <ul className={css.list__text}>
+            <li className={css.list__text__item}>
+              <p>
+                Good: <span className={css.span__text}>{this.state.good}</span>
+              </p>
+            </li>
+            <li className={css.list__text__item}>
+              <p>
+                Neutral:{' '}
+                <span className={css.span__text}>{this.state.netural}</span>
+              </p>
+            </li>
+            <li className={css.list__text__item}>
+              <p>
+                Bad:<span className={css.span__text}>{this.state.bad}</span>
+              </p>
+            </li>
+            <li className={css.list__text__item}>
+              <p>
+                Total:
+                <span className={css.span__text__red}>{this.state.total}</span>
+              </p>
+            </li>
+            <li className={css.list__text__item}>
+              <p>
+                Positive feedback:
+                <span className={css.span__text__red}>
+                  {this.state.positiveFeedback}%
+                </span>
+              </p>
+            </li>
+          </ul>
+        ) : (
+          <p className={css.text__message}>There is no feedback</p>
+        )}
       </div>
     );
   }
