@@ -86,7 +86,7 @@ export class Feedback extends Component {
             </li>
             <li className={css.list__text__item}>
               <p>
-                Neutral:{' '}
+                Neutral:
                 <span className={css.span__text}>{this.state.netural}</span>
               </p>
             </li>
